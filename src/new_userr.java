@@ -270,15 +270,14 @@ public class new_userr extends javax.swing.JFrame {
         String Email=jTextField2.getText();
         String gender=(String)jComboBox1.getSelectedItem();
         String contactno=jTextField3.getText();
-        String address=jTextField4.getText();
         try{
             Connection con=ConnectionProvider.getcon();
             Statement st=con.createStatement();
-            st.executeUpdate("insert into newuser values('"+name+"','"+Email+"','"+gender+"','"+contactno+"','"+address+"')");
+            st.executeUpdate("insert into newuser values('"+name+"','"+Email+"','"+gender+"','"+contactno+"')");
             JOptionPane.showMessageDialog(null, "Successfully Updated");
             setVisible(false);
             new new_userr().setVisible(true);
-           }
+        }
         catch(Exception e)
         {
              JOptionPane.showMessageDialog(null, "MOBILE number exist");
